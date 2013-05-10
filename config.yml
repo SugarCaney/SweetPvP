@@ -1,0 +1,17 @@
+game:
+  prize: 371,1
+kit:
+  basic:
+    - 268,1
+    - 261,1
+    - 262,16
+tag:
+  main: "&a|&e|&6PvP&e|&a| &e"
+  error: "&c[!!] "
+messages:
+  no-permission: "&cYou don't have permission to perform this command"
+  wrong-sign: "&cThe [PvP]-sign is invalid"
+  success-sign: "&eCreated [PvP]-sign &asuccessfully&e!"
+  lobby-set: "&eThe lobby-spawn has been set!"
+  no-commands: "&cYou can't perform commands in-game!"
+  get-prize: "&eCongratulations! You got a prize!"

@@ -1,0 +1,8 @@
+name: SweetPvP
+main: nl.SugCube.SweetPvP.Main.SweetPvP
+version: '1'
+description: >
+             PvP-Arena plugin made by MrSugarCaney
+commands:
+  spvp:
+    description: The SweetPVP Commands. /spvp for help.

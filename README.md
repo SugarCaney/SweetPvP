@@ -1,4 +1,3 @@
 SweetPvP
-==================
-Easy PVP-Arena management
-Made by MrSugarCaney
+====================================================
+A PvP Arena Plugin by MrSugarCaney
