@@ -1,17 +1,52 @@
 game:
-  prize: 371,1
+  prize: 384,3
+  countdown: 30
 kit:
-  basic:
-    - 268,1
-    - 261,1
-    - 262,16
+  Basic:
+  - 268,1
+  - 261,1
+  - 262,16
+  - 298,1
+  - 299,1
+  PvP:
+  - 267,1
+  - 261,1
+  - 262,64
+  - 364,16
+  - 306,1
+  - 307,1
+  - 308,1
+  - 309,1
 tag:
   main: "&a|&e|&6PvP&e|&a| &e"
   error: "&c[!!] "
 messages:
-  no-permission: "&cYou don't have permission to perform this command"
+  no-permission: "&cYou don't have permission to do this"
   wrong-sign: "&cThe [PvP]-sign is invalid"
   success-sign: "&eCreated [PvP]-sign &asuccessfully&e!"
   lobby-set: "&eThe lobby-spawn has been set!"
+  spawn-set: "&eSpawn &a#%no &eset for &a%arena&e!"
+  spawn-delete: "&eAll spawns deleted for &a%arena"
   no-commands: "&cYou can't perform commands in-game!"
-  get-prize: "&eCongratulations! You got a prize!"
+  get-prize: "&eCongratulations! You won &a%prize&e!"
+  on-win: "&a%player &ewon the battle in &a%arena&e!"
+  invalid-power: "&cInvalid power-type!"
+  empty-hand: "&cPlease empty your hand to join this arena!"
+  join-arena: "&eYou joined &a%arena&e with &a%extra"
+  no-kit-or-power: "&eYou joined &a%arena&e for a &aFist Fight"
+  no-spawns-arena: "&cThere are no spawns set for %arena"
+  arena-enabled: "&a%arena&e has been &aenabled&e!"
+  arena-disabled: "&a%arena&e has been &cdisabled&e!"
+  quit: "&eYou left &a%arena"
+  no-quit: "&cYou didn't enter an arena!"
+  no-join: "&cSorry, you can't join this arena!"
+  join-broadcast: "&a%player&e joined the arena &a(%amount/%max)"
+  no-command: "&cYou can't use commands while in-game!"
+  arena-countdown: "&eThe match will start in &a%time seconds"
+  arena-countdown-ready: "&aReady?"
+  arena-countdown-steady: "&eSteady"
+  arena-countdown-fight: "&6Fight!"
+  not-enough-players: "&cNot enough players to start the match"
+  kill: "&a%player&e is eliminated by %killer"
+  died: "&a%player&e died"
+  disable-kick: "&eThe arena has been disabled. Returned to lobby."
