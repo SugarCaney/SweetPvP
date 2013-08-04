@@ -50,7 +50,7 @@ public class SweetPvP extends JavaPlugin {
 	public static HashMap<Player, Collection<PotionEffect>> effects = new HashMap<Player, Collection<PotionEffect>>();
 	public static HashMap<Player, Float> exp = new HashMap<Player, Float>();
 	public static HashMap<Player, Integer> level = new HashMap<Player, Integer>();
-	public static HashMap<Player, Integer> health = new HashMap<Player, Integer>();
+	public static HashMap<Player, Double> health = new HashMap<Player, Double>();
 	public static HashMap<Player, Float> saturation = new HashMap<Player, Float>();
 	public static HashMap<Player, Integer> food = new HashMap<Player, Integer>();
 	
@@ -200,7 +200,8 @@ public class SweetPvP extends JavaPlugin {
 						return false;
 					}
 					Player player = (Player) sender;
-					if (sender.hasPermission("sweetpvp.staff") || sender.hasPermission("sweetpvp.admin")) {
+					if (sender.hasPermission("sweetpvp.staff") || sender.hasPermission("sweetpvp.admin") ||
+							sender.hasPermission("sweetpvp.enable")) {
 						if (args.length > 1) {
 							getData().set("arena." + args[1] + ".enabled", true);
 							arena[Integer.parseInt(args[1]) - 1].enabled(true);
@@ -228,7 +229,8 @@ public class SweetPvP extends JavaPlugin {
 						return false;
 					}
 					Player player = (Player) sender;
-					if (sender.hasPermission("sweetpvp.staff") || sender.hasPermission("sweetpvp.admin")) {
+					if (sender.hasPermission("sweetpvp.staff") || sender.hasPermission("sweetpvp.admin") ||
+							sender.hasPermission("sweetpvp.disable")) {
 						if (args.length > 1) {
 							getData().set("arena." + args[1] + ".enabled", false);
 							arena[Integer.parseInt(args[1]) - 1].enabled(false);
@@ -294,8 +296,18 @@ public class SweetPvP extends JavaPlugin {
 						player.teleport(loc);
 					}
 				} else if (args[0].equalsIgnoreCase("forcestart")) {
-					if (sender.hasPermission("spvp.staff") || sender.hasPermission("sweetpvp.admin")) {
-						arena[Integer.parseInt(args[1]) - 1].startCount(true);
+					if (sender.hasPermission("sweetpvp.staff") || sender.hasPermission("sweetpvp.admin") ||
+							sender.hasPermission("sweetpvp.forcestart")) {
+						try {
+							arena[Integer.parseInt(args[1]) - 1].startCount(true);
+						} catch (Exception e) {
+							if (sender instanceof Player) {
+								((Player) sender).sendMessage(Methods.setColors(getConfig().getString("tag.error") + "Usage:" +
+										" /spvp forcestart <arena#>"));
+							} else {
+								logger.info("Usage: spvp forcestart <arena#>");
+							}
+						}
 					} else {
 						((Player) sender).sendMessage(Methods.setColors(getConfig().getString("tag.error") +
 								getConfig().getString("messages.no-permission")));

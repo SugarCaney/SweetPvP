@@ -80,6 +80,10 @@ public class SignListener implements Listener {
 									if (Powers.powerStrength.contains(player)) {
 										player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 999999999, 0));
 									}
+									if (Powers.powerHealth.contains(player)) {
+										player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 999999999, 0));
+										player.setHealth(24.0);
+									}
 		
 									for (Player pl : plugin.arena[Integer.parseInt(arenaNo1[2]) - 1].getPlayers()) {
 										pl.sendMessage(Methods.setColors(plugin.getConfig().getString("tag.main") +

@@ -42,7 +42,7 @@ public class FightListener implements Listener {
 					}
 				} else if (Powers.powerDrain.contains(damager)) {
 					if (ran.nextInt(6) == 0) {
-						damager.setHealth((damager.getHealth() + 1 > 20 ? 20 : damager.getHealth() + 1));
+						damager.setHealth((damager.getHealth() + 1.0 > 20.0 ? 20.0 : damager.getHealth() + 1.0));
 					}
 				} else if (Powers.powerFire.contains(damager)) {
 					if (ran.nextInt(6) == 0) {
@@ -61,7 +61,7 @@ public class FightListener implements Listener {
 						lentity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 0));
 					}
 				} else if (Powers.powerStrength.contains(damager)) {
-					e.setDamage(e.getDamage() - 2);
+					e.setDamage(e.getDamage() - 2.0);
 				}
 			}
 		}

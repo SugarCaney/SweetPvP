@@ -18,6 +18,7 @@ public class Powers {
 	public static List<Player> powerSlowness = new ArrayList<Player>();
 	public static List<Player> powerStrength = new ArrayList<Player>();
 	public static List<Player> powerInvisibility = new ArrayList<Player>();
+	public static List<Player> powerHealth = new ArrayList<Player>();
 	
 	public Powers(SweetPvP instance) {
 		plugin = instance;
@@ -118,6 +119,17 @@ public class Powers {
 					|| player.hasPermission("sweetpvp.staff")) {
 				if (!(powerInvisibility.contains(player)))
 					powerInvisibility.add(player);
+			} else {
+				player.sendMessage(Methods.setColors(plugin.getConfig().getString("tag.error") +
+						plugin.getConfig().getString("messages.no-permission")));
+				return false;
+			}
+			return true;
+		case "Health":
+			if (player.hasPermission("sweetpvp.power.health") || player.hasPermission("sweetpvp.admin")
+					|| player.hasPermission("sweetpvp.staff")) {
+				if (!(powerHealth.contains(player)))
+					powerHealth.add(player);
 			} else {
 				player.sendMessage(Methods.setColors(plugin.getConfig().getString("tag.error") +
 						plugin.getConfig().getString("messages.no-permission")));

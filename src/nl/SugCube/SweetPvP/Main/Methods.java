@@ -65,11 +65,11 @@ public class Methods {
 			SweetPvP.level.put(player, player.getLevel());
 			player.setLevel(0);
 			SweetPvP.health.put(player, player.getHealth());
-			player.setHealth(20);
+			player.setHealth(20.0);
 			SweetPvP.food.put(player, player.getFoodLevel());
 			player.setFoodLevel(20);
 			SweetPvP.saturation.put(player, player.getSaturation());
-			player.setSaturation(10);
+			player.setSaturation(20F);
 		}
 	}
 

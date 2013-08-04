@@ -21,9 +21,13 @@ public class Help {
 			p.sendMessage(Methods.setColors("&b* &aset <arena#> &eSets the next spawnpoint of the arena"));
 			p.sendMessage(Methods.setColors("&b* &adelete <arena#> &eDeletes all spawns of a certain arena"));
 		}
-		if (p.hasPermission("sweetpvp.admin") || p.hasPermission("sweetpvp.staff")) {
+		if (p.hasPermission("sweetpvp.admin") || p.hasPermission("sweetpvp.staff") || p.hasPermission("sweetpvp.enable")) {
 			p.sendMessage(Methods.setColors("&b* &aenable <arena#> &eEnables a certain arena"));
+		}
+		if (p.hasPermission("sweetpvp.admin") || p.hasPermission("sweetpvp.staff") || p.hasPermission("sweetpvp.disable")) {
 			p.sendMessage(Methods.setColors("&b* &adisable <arena#> &eDisables a certain arena"));
+		}
+		if (p.hasPermission("sweetpvp.admin") || p.hasPermission("sweetpvp.staff") || p.hasPermission("sweetpvp.forcestart")) {
 			p.sendMessage(Methods.setColors("&b* &aforcestart <arena#> &eForces a countdown of a certain arena"));
 		}
 		p.sendMessage(Methods.setColors("&b* &alobby &eTeleports you to the lobby"));
